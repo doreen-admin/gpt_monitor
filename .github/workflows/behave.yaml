@@ -1,16 +1,4 @@
 name: Run Behave on merge or regularly
-
-steps:
-- uses: actions/checkout@v4
-- uses: actions/setup-python@v5
-  with:
-    python-version: 3.10.12
-- uses: cryptic-wizard/run-behave-tests@v0.4.0
-  with:
-    test-path: example_project
-    test-output-name: results.txt
-
-name: Run Behave on merge or regularly
 on:
   push:
     branches:
