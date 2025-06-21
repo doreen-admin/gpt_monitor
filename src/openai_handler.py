@@ -16,7 +16,7 @@ class OpenAIHandler:
         self.context.assistant = self.context.client.beta.assistants.create(
             name=app,
             instructions=instructions,
-            model="gpt-4o"
+            model=self.context.config.userdata["model"]
         )
     
     def ask(self, query):
