@@ -2,6 +2,7 @@ import json
 import re
 from openai import OpenAI
 from logging import getLogger
+import os
 
 class OpenAIHandler:
     def set_context(self, context):
@@ -10,7 +11,8 @@ class OpenAIHandler:
         self.err = False
 
     def create_assistant(self, app, instructions):
-        self.context.client = OpenAI()
+        OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
+        self.context.client = OpenAI(api_key=OPENAI_API_KEY)
 
         # Create an Assistant
         self.context.assistant = self.context.client.beta.assistants.create(

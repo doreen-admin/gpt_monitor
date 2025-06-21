@@ -27,3 +27,5 @@ jobs:
       - name: Run Behave Tests
         run: behave
         continue-on-error: true
+        with:
+          test-output-name: results.txt
