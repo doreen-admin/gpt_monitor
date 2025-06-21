@@ -26,7 +26,4 @@ jobs:
           pip install -r requirements.txt
       - name: Run Behave Tests
         run: behave
-        uses: ./
-        with:
-          test-output-name: results.txt
         continue-on-error: true
